@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import MainCalculator from './MainCalculator.js';
+import { useState, useEffect } from "react";
 
 function App() {
+  const copyName = "Tomás Pacheco";
+  let copyYear = `${copyName} | ${new Date().getFullYear()}`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className="container">
+      <nav className="navbar navbar-dark bg-dark fixed-top">
+        <a className="navbar-brand ms-4" href="#">
+          Dame Mi Boleta
         </a>
-      </header>
+      </nav>
+
+      <MainCalculator />
+
+      <footer className="row">
+        <div className="col-12">
+          <p className="footer-text">{copyYear}</p>
+        </div>
+      </footer>
     </div>
   );
 }
