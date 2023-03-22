@@ -1,6 +1,6 @@
 import "./App.css";
+import logo from './assets/logo-v02-boletaz.png'
 import MainCalculator from './MainCalculator.js';
-import { useState, useEffect } from "react";
 
 function App() {
   const copyName = "Tomás Pacheco";
@@ -10,7 +10,7 @@ function App() {
     <div className="container">
       <nav className="navbar navbar-dark bg-dark fixed-top">
         <a className="navbar-brand ms-4" href="#">
-          Dame Mi Boleta
+        <img src={logo} className="App-logo" alt="logo" height='35'/>
         </a>
       </nav>
 
