@@ -6,16 +6,18 @@ function MainCalculator() {
   const [totalGrossValue, setTotalGrossValue] = useState();
   const [totalLiquidValue, setTotalLiquidValue] = useState();
   const [discountValue, setDiscountValue] = useState();
+  const [discountGrossValue, setDiscountGrossValue] = useState();
 
   // acctual discount is 13%
 
   const discount = 0.13;
+  const remainer = 0.87;
 
   const grossInfo =
     totalInfo === true ? (
       <p>
-        Tu valor bruto es de: ${totalGrossValue} <br /> Tu descuento del 13% es
-        de: ${discountValue}
+        Tu valor bruto es de: <strong>${totalGrossValue}</strong> <br /> Tu descuento del 13% es
+        de: <strong>${discountGrossValue}</strong>
       </p>
     ) : (
       ""
@@ -23,8 +25,8 @@ function MainCalculator() {
   const liquidInfo =
     totalInfo === true ? (
       <p>
-        Tu valor liquido es de: ${totalLiquidValue}
-        <br /> Tu descuento del 13% es de: ${discountValue}
+        Tu valor liquido es de: <strong>${totalLiquidValue}</strong>
+        <br /> Tu descuento del 13% es de: <strong>${discountValue}</strong>
       </p>
     ) : (
       ""
@@ -36,19 +38,30 @@ function MainCalculator() {
     setMainValue("");
     setTotalInfo(true);
     discountValueCalc();
+    grossDiscountValue();
   };
 
   const grossValue = () => {
-    setTotalGrossValue(mainValue + mainValue * discount);
+    setTotalGrossValue(mainValue + Math.round(mainValue / remainer * discount));
   };
 
   const liquidValue = () => {
-    setTotalLiquidValue(mainValue);
+    setTotalLiquidValue(Math.round(mainValue));
   };
 
   const discountValueCalc = () => {
-    setDiscountValue(mainValue * discount);
+    setDiscountValue(Math.round(mainValue * discount));
   };
+
+  const grossDiscountValue = ()=>{
+    setDiscountGrossValue(Math.round(mainValue / remainer * discount));
+  }
+
+  const limiter = (e)=>{
+    //e.target.value.replace(/[^0-9]/g, "");
+    if (e.target.value.length > e.target.maxLength)
+                e.target.value = e.target.value.slice(0,e.target.maxLength);
+  }
 
   return (
     <div className="row d-flex justify-content-center align-items-center content">
@@ -70,6 +83,8 @@ function MainCalculator() {
               placeholder="Ingresa tu cifra"
               onChange={(e) => setMainValue(+e.target.value)}
               value={mainValue}
+              onInput={limiter}
+              maxlength = {10}
             />
 
             <button
@@ -82,6 +97,7 @@ function MainCalculator() {
           </div>
           {/* Respuesta calculos */}
           {grossInfo}
+          {totalInfo === true ? <hr/> : '' }
           {liquidInfo}
           {/* Fin respuesta calculos */}
         </div>

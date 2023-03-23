@@ -1,4 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Source+Sans+Pro:wght@300;700&display=swap');
 
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+}
+
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+hr {
+  color: white!important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 body {
   background-color: #74EBD5;

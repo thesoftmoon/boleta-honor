@@ -3,7 +3,7 @@ import logo from './assets/logo-v02-boletaz.png'
 import MainCalculator from './MainCalculator.js';
 
 function App() {
-  const copyName = "Tomás Pacheco";
+  const copyName = "Boletaz";
   let copyYear = `${copyName} | ${new Date().getFullYear()}`;
 
   return (
