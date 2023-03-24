@@ -58,9 +58,9 @@ function MainCalculator() {
   }
 
   const limiter = (e)=>{
-    //e.target.value.replace(/[^0-9]/g, "");
-    if (e.target.value.length > e.target.maxLength)
-                e.target.value = e.target.value.slice(0,e.target.maxLength);
+    if (e.target.value.length > e.target.maxLength){
+      e.target.value = e.target.value.slice(0,e.target.maxLength);
+    }
   }
 
   return (
@@ -84,7 +84,7 @@ function MainCalculator() {
               onChange={(e) => setMainValue(+e.target.value)}
               value={mainValue}
               onInput={limiter}
-              maxlength = {10}
+              maxLength = {10}
             />
 
             <button

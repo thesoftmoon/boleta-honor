@@ -41,8 +41,11 @@ footer {
   right: 0;
   left: 0;
   position: fixed;
-  height: 40px;
   background-color: black;
+}
+
+footer a {
+  color: #fff!important;
 }
 
 .footer-text {
@@ -64,4 +67,12 @@ footer {
 .main-card > h2, p {
   color: #fff!important;
   text-shadow: 2px 2px 5px #00000025;
+}
+
+.rrss {
+  margin-bottom: 10px;
+}
+
+.rrss a {
+  padding:  0px 10px;
 }
