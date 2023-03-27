@@ -73,7 +73,7 @@ function MainCalculator() {
             boletas de honorarios
           </h2>
           <p className="mb-4">
-          Cotiza de forma fácil las cifras para tu boleta de honorarios, ingresa la cifra que deseas liquida o bruta y obtén los cálculos 😊
+          Calcula de forma fácil las cifras para tu boleta de honorarios, ingresa la cifra que deseas liquida o bruta y obtén los cálculos 😊
           </p>
 
           <div className="input-group mb-3">

@@ -44,7 +44,12 @@ footer {
   background-color: black;
 }
 
-footer a {
+footer .share {
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+
+footer a, h3, h4 {
   color: #fff!important;
 }
 
@@ -52,8 +57,7 @@ footer a {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 5px;
-  font-size: 0.75rem;
-  font-weight: bolder;
+  font-size: 0.8rem;
   color: #fff;
 }
 
@@ -74,5 +78,9 @@ footer a {
 }
 
 .rrss a {
-  padding:  0px 10px;
+  padding:  0px 20px;
+}
+
+.rrss i{
+  font-size: 1.5rem;
 }

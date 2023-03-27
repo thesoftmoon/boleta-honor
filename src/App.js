@@ -17,17 +17,23 @@ function App() {
       <MainCalculator />
     
       <footer className="row">
-      <div className="col-12 text-center rrss">
-            <a href="https://api.whatsapp.com/send?text=https://github.com/thesoftmoon" target='_blank' rel="noreferrer">
+        {/* <div className="col-12 text-center">
+          <p className="text-uppercase share">Comparte</p>
+        </div> */}
+      <div className="col-12 text-center rrss mt-2 d-flex justify-content-center
+      ">
+
+            <p className="text-uppercase share">Comparte </p>
+            <a href="https://wa.me/?text=Calcula%20fácilmente%20tu%20boleta%20de%20honorarios%20con%20esta%20App%20https://github.com/thesoftmoon" target='_blank' rel="noreferrer">
               <i className="fa-brands fa-whatsapp"></i>
             </a>
 
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/thesoftmoon" target='_blank' rel="noreferrer">
-            <i class="fa-brands fa-facebook"></i>
+            <i className="fa-brands fa-facebook"></i>
             </a>
 
             <a href="https://twitter.com/intent/tweet?url=https://github.com/thesoftmoon&text=Calcula%20f%C3%A1cilmente%20tu%20boleta%20de%20honorarios%20con%20esta%20app" target='_blank' rel="noreferrer">
-            <i class="fa-brands fa-twitter"></i>
+            <i className="fa-brands fa-twitter"></i>
             </a>
           </div>
         <div className="col-12">
