@@ -65,8 +65,8 @@ function MainCalculator() {
 
   return (
     <div className="row d-flex justify-content-center align-items-center content">
-      <div className="col-12 col-md-8">
-        <div className="card main-card px-3 px-md-5 pt-3 text-center">
+      <div className="col-12 col-md-6">
+        <div className="card main-card px-3 px-md-5 p-4 text-center">
           <h2 className="mb-4 text-uppercase">
             Calculadora
             <br />
