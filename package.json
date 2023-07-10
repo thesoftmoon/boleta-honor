@@ -2,6 +2,7 @@
   "name": "boleta-honor",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://thesoftmoon.github.io/boleta-honor",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
