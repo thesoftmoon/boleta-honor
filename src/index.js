@@ -9,6 +9,7 @@ import {
 import FaqPage from './pages/Faq';
 import InformacionPage from './pages/Informacion';
 import LinksPage from './pages/Links';
+import ErrorPage from './pages/Error';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/links",
     element: <LinksPage />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 
