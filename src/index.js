@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import FaqPage from './pages/Faq';
@@ -11,7 +11,7 @@ import InformacionPage from './pages/Informacion';
 import LinksPage from './pages/Links';
 import ErrorPage from './pages/Error';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
