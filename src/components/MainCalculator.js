@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NumericFormat, numericFormat } from "react-number-format";
 
 function MainCalculator() {
   const [mainValue, setMainValue] = useState("");
@@ -16,8 +17,8 @@ function MainCalculator() {
   const grossInfo =
     totalInfo === true ? (
       <p>
-        Tu valor bruto es de: <strong>${totalGrossValue}</strong> <br /> Tu descuento del 13% es
-        de: <strong>${discountGrossValue}</strong>
+        Tu valor bruto es de: <strong>${totalGrossValue}</strong> <br /> Tu
+        descuento del 13% es de: <strong>${discountGrossValue}</strong>
       </p>
     ) : (
       ""
@@ -41,8 +42,16 @@ function MainCalculator() {
     grossDiscountValue();
   };
 
+  const valueFormatter = (e) => {
+    let value = e.target.value.replace(/[^\d]/g, "");
+    let parsedValue = parseInt(value, 10);
+    setMainValue(parsedValue);
+  };
+
   const grossValue = () => {
-    setTotalGrossValue(mainValue + Math.round(mainValue / remainer * discount));
+    setTotalGrossValue(
+      mainValue + Math.round((mainValue / remainer) * discount)
+    );
   };
 
   const liquidValue = () => {
@@ -53,15 +62,10 @@ function MainCalculator() {
     setDiscountValue(Math.round(mainValue * discount));
   };
 
-  const grossDiscountValue = ()=>{
-    setDiscountGrossValue(Math.round(mainValue / remainer * discount));
-  }
-
-  const limiter = (e)=>{
-    if (e.target.value.length > e.target.maxLength){
-      e.target.value = e.target.value.slice(0,e.target.maxLength);
-    }
-  }
+  const grossDiscountValue = () => {
+    setDiscountGrossValue(Math.round((mainValue / remainer) * discount));
+  };
+  const MAX_LIMIT = 1000000000;
 
   return (
     <div className="row d-flex justify-content-center align-items-center content">
@@ -73,18 +77,22 @@ function MainCalculator() {
             boletas de honorarios
           </h2>
           <p className="mb-4">
-          Cotiza de forma fácil las cifras para tu boleta de honorarios, ingresa la cifra que deseas liquida o bruta y obtén los cálculos 😊
+            Cotiza de forma fácil las cifras para tu boleta de honorarios,
+            ingresa la cifra que deseas liquida o bruta y obtén los cálculos 😊
           </p>
 
           <div className="input-group mb-3">
-            <input
+            <NumericFormat
               className="form-control"
-              type="number"
-              placeholder="Ingresa tu cifra"
-              onChange={(e) => setMainValue(+e.target.value)}
+              thousandSeparator=","
+              onChange={valueFormatter}
               value={mainValue}
-              onInput={limiter}
-              maxLength = {10}
+              allowLeadingZeros={false}
+              allowNegative={false}
+              isAllowed={(values) => {
+                const { floatValue } = values;
+                return floatValue < MAX_LIMIT;
+              }}
             />
 
             <button
@@ -97,7 +105,7 @@ function MainCalculator() {
           </div>
           {/* Respuesta calculos */}
           {grossInfo}
-          {totalInfo === true ? <hr/> : '' }
+          {totalInfo === true ? <hr /> : ""}
           {liquidInfo}
           {/* Fin respuesta calculos */}
         </div>

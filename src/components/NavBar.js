@@ -12,7 +12,7 @@ function NavBar() {
                 <img src={logo} className="App-logo" alt="logo" height="35" />
               </a>
 
-              <div className="navbar-links">
+              {/* <div className="navbar-links">
                 <a href="/faq" data-content="FAQ">
                   FAQ
                 </a>
@@ -22,7 +22,7 @@ function NavBar() {
                 <a href="/informacion" data-content="Información">
                   Información
                 </a>
-              </div>
+              </div> */}
             </div>
 
             <div className="text-center share-btn-container">
