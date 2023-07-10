@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/boleta-honor/static/css/main.0ad10c3f.css",
-    "main.js": "/boleta-honor/static/js/main.e45afe99.js",
+    "main.js": "/boleta-honor/static/js/main.4d2bc6ac.js",
     "index.html": "/boleta-honor/index.html",
     "main.0ad10c3f.css.map": "/boleta-honor/static/css/main.0ad10c3f.css.map",
-    "main.e45afe99.js.map": "/boleta-honor/static/js/main.e45afe99.js.map"
+    "main.4d2bc6ac.js.map": "/boleta-honor/static/js/main.4d2bc6ac.js.map"
   },
   "entrypoints": [
     "static/css/main.0ad10c3f.css",
-    "static/js/main.e45afe99.js"
+    "static/js/main.4d2bc6ac.js"
   ]
 }
