@@ -13,7 +13,7 @@ import ErrorPage from './pages/Error';
 
 const router = createHashRouter([
   {
-    path: "/*",
+    path: "/",
     element: <App />,
   },
   {

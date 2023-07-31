@@ -1,0 +1,144 @@
+.navbar-main-container {
+  background: linear-gradient(180deg, rgb(0 0 0 / 13%) 0%, rgba(0, 0, 0, 0) 100%);
+  min-height: 70px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-main-container p {
+  margin-bottom: 0px !important;
+}
+
+.navbar-links {
+  display: flex;
+  margin-left: 40px;
+}
+
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff !important;
+  font-size: 18px;
+  font-weight: 250;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 15px;
+}
+
+.navbar-links a::before {
+  content: attr(data-content);
+  transition: 0.5s;
+  color: #74EBD5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.navbar-links a:hover::before {
+  width: 100%;
+}
+
+.share-btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.share-btn-container a {
+  color: white!important;
+  margin: 0 15px;
+  font-size: 25px;
+  transition: 0.5s;
+}
+
+.share-btn-container a:hover {
+  color: #74EBD5!important;
+}
+
+/* Hamburguer menu */
+
+$menu-bg: #DE4152;
+$menu-color: #ffffff;
+$menu-font-size: 2.5rem;
+$menu-zindex: 1100;
+$hamburger-color: #fff;
+$hamburger-width: 50px;
+$hamburger-height: 50px;
+$hamburger-zindex: $menu-zindex + 10;
+
+.toggle-menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  height: $hamburger-height;
+  outline: none;
+  padding: 0;
+  pointer-events: initial;
+  position: relative;
+  vertical-align: middle;
+  width: $hamburger-width;
+  z-index: $hamburger-zindex;
+
+  span {
+    background-color: $hamburger-color;
+    content: "";
+    display: block;
+    height: 2px;
+    left: calc(50% - 13px );
+    position: absolute;
+    top: calc(50% - 1px );
+    transform-origin: 50% 50%;
+    transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+    width: 26px;
+
+    &:before, &:after {
+      background-color: $hamburger-color;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      transform-origin: 50% 50%;
+      transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+      width: 26px;
+    }
+
+    &:before {
+      top: 7px;
+    }
+
+    &:after {
+      top: -7px;
+    }
+  }
+
+  &.active {
+    span {
+      background-color: transparent;
+      transition: background 0.2s ease-out;
+
+      &:before, &:after {
+        transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+      }
+
+      &:before {
+        top: 0;
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+
+      &:after {
+        top: 0;
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+    }
+  }
+}
