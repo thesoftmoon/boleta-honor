@@ -7,6 +7,7 @@
   top: 0;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 .navbar-main-container p {
@@ -53,14 +54,14 @@
 }
 
 .share-btn-container a {
-  color: white!important;
+  color: white !important;
   margin: 0 15px;
   font-size: 25px;
   transition: 0.5s;
 }
 
 .share-btn-container a:hover {
-  color: #74EBD5!important;
+  color: #74EBD5 !important;
 }
 
 /* Hamburguer menu */
@@ -94,21 +95,22 @@ $hamburger-zindex: $menu-zindex + 10;
     content: "";
     display: block;
     height: 2px;
-    left: calc(50% - 13px );
+    left: calc(50% - 13px);
     position: absolute;
-    top: calc(50% - 1px );
+    top: calc(50% - 1px);
     transform-origin: 50% 50%;
-    transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+    transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
     width: 26px;
 
-    &:before, &:after {
+    &:before,
+    &:after {
       background-color: $hamburger-color;
       content: "";
       display: block;
       height: 2px;
       position: absolute;
       transform-origin: 50% 50%;
-      transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+      transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
       width: 26px;
     }
 
@@ -126,7 +128,8 @@ $hamburger-zindex: $menu-zindex + 10;
       background-color: transparent;
       transition: background 0.2s ease-out;
 
-      &:before, &:after {
+      &:before,
+      &:after {
         transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
       }
 
@@ -139,6 +142,47 @@ $hamburger-zindex: $menu-zindex + 10;
         top: 0;
         transform: rotate3d(0, 0, 1, 45deg);
       }
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  position: relative;
+
+  .mo-links {
+    display: block;
+    position: absolute;
+    background-color: #74EBD5;
+    top: 0;
+    right: 0;
+    width: 200px;
+    opacity: 0%;
+    transition: all 0.5s ease-out;
+    visibility: hidden;
+
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px 0px 30px 0px;
+      hr {
+        width: 80%;
+        color: #fff!important;
+        opacity: 0.85!important;
+      }
+
+      .links {
+        a {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    &-active {
+      @extend .mo-links;
+      opacity: 100%;
+      visibility: visible;
     }
   }
 }
