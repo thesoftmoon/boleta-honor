@@ -9,16 +9,16 @@ function MainCalculator() {
   const [discountValue, setDiscountValue] = useState();
   const [discountGrossValue, setDiscountGrossValue] = useState();
 
-  // acctual discount is 13%
+  // acctual discount is 13,75% in 2024 year
 
-  const discount = 0.13;
-  const remainer = 0.87;
+  const discount = 0.1375;
+  const remainer = 0.8625;
 
   const grossInfo =
     totalInfo === true ? (
       <p>
         Tu valor bruto es de: <strong>${totalGrossValue}</strong> <br /> Tu
-        descuento del 13% es de: <strong>${discountGrossValue}</strong>
+        descuento del 13,75% es de: <strong>${discountGrossValue}</strong>
       </p>
     ) : (
       ""
@@ -27,7 +27,7 @@ function MainCalculator() {
     totalInfo === true ? (
       <p>
         Tu valor liquido es de: <strong>${totalLiquidValue}</strong>
-        <br /> Tu descuento del 13% es de: <strong>${discountValue}</strong>
+        <br /> Tu descuento del 13,75% es de: <strong>${discountValue}</strong>
       </p>
     ) : (
       ""
