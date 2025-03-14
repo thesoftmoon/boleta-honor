@@ -13,12 +13,13 @@ function MainCalculator() {
 
   const discount = 0.145;
   const remainer = 1 - discount;
+  const discountToPercentage = parseFloat((discount * 100).toFixed(1));
 
   const grossInfo =
     totalInfo === true ? (
       <p>
         Tu valor bruto es de: <strong>${totalGrossValue}</strong> <br /> Tu
-        descuento del 13,75% es de: <strong>${discountGrossValue}</strong>
+        descuento del {discountToPercentage}% es de: <strong>${discountGrossValue}</strong>
       </p>
     ) : (
       ""
@@ -27,7 +28,7 @@ function MainCalculator() {
     totalInfo === true ? (
       <p>
         Tu valor liquido es de: <strong>${totalLiquidValue}</strong>
-        <br /> Tu descuento del 13,75% es de: <strong>${discountValue}</strong>
+        <br /> Tu descuento del {discountToPercentage}% es de: <strong>${discountValue}</strong>
       </p>
     ) : (
       ""
