@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar.js";
 import Footer from "./components/Footer";
 import Favicon from './assets/Favicon/favicon-16x16.png'
 import { useEffect } from "react";
+import 'animate.css'
 
 function App() {
 

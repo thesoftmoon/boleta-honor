@@ -11,8 +11,8 @@ function MainCalculator() {
 
   // acctual discount is 13,75% in 2024 year
 
-  const discount = 0.1375;
-  const remainer = 0.8625;
+  const discount = 0.145;
+  const remainer = 1 - discount;
 
   const grossInfo =
     totalInfo === true ? (
@@ -49,28 +49,33 @@ function MainCalculator() {
   };
 
   const grossValue = () => {
-    setTotalGrossValue(
-      mainValue + Math.round((mainValue / remainer) * discount)
-    );
+    let value = mainValue + Math.round((mainValue / remainer) * discount);
+    let finalValue = value.toLocaleString('es-ES');
+    setTotalGrossValue(finalValue);
   };
 
   const liquidValue = () => {
-    setTotalLiquidValue(Math.round(mainValue));
+    let value = Math.round(mainValue);
+    let finalValue = value.toLocaleString('es-ES');
+    setTotalLiquidValue(finalValue);
   };
 
   const discountValueCalc = () => {
-    setDiscountValue(Math.round(mainValue * discount));
+    let value = Math.round(mainValue * discount);
+    let finalValue = value.toLocaleString('es-ES');
+    setDiscountValue(finalValue);
   };
 
   const grossDiscountValue = () => {
-    setDiscountGrossValue(Math.round((mainValue / remainer) * discount));
+    let value = Math.round((mainValue / remainer) * discount)
+    let finalValue = value.toLocaleString('es-ES');
+    setDiscountGrossValue(finalValue);
   };
-  const MAX_LIMIT = 1000000000;
 
   return (
     <div className="row d-flex justify-content-center align-items-center content">
       <div className="col-11 col-md-6">
-        <div className="card main-card px-3 px-md-5 p-4 text-center">
+        <div className="card main-card px-3 px-md-5 p-4 text-center animate__animated animate__fadeInRightBig">
           <h2 className="mb-4 text-uppercase">
             Calculadora
             <br />
@@ -83,6 +88,7 @@ function MainCalculator() {
 
           <div className="input-group mb-3">
             <NumericFormat
+            placeholder="Ingresa una cifra"
               className="form-control"
               thousandSeparator="."
               decimalSeparator=","
@@ -90,10 +96,13 @@ function MainCalculator() {
               value={mainValue}
               allowLeadingZeros={false}
               allowNegative={false}
-              isAllowed={(values) => {
-                const { floatValue } = values;
-                return floatValue < MAX_LIMIT;
-              }}
+              //Here you avoid the initial number, now you can delete it
+              isAllowed={({ floatValue }) => floatValue === undefined || floatValue <= 999999999}
+              //This below won't let you delete the initial number
+              //isAllowed={(values) => {
+              //  const { floatValue } = values;
+              //  return floatValue < MAX_LIMIT;
+              //}}
             />
 
             <button

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Boletaz",
+  "name": "Calculadora de boletas de honorario",
   "icons": [
     {
       "src": "favicon.ico",
